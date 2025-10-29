@@ -1,0 +1,158 @@
+
+
+.fadeIn{
+    animation: fadeIn 1 alternate 2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+    
+  .zoomIn{
+    animation: zoomIn 1 1s ease;
+  }
+  @keyframes zoomIn {
+    0%{
+        transform: scale(.7);
+    }
+    100%{
+        transform: scale(1);
+    }
+  }
+
+
+.slideLeft
+{
+    animation: slideInLeft 1 2s ease;
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+      }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+    
+.slideInRight
+{
+    animation: slideInRight 1 2s ease;
+}
+@keyframes slideInRight {
+    0% {
+        transform: translateX(50%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+  }
+
+.slideUp{
+  animation: slideUp 1 2s ease;
+}
+@keyframes slideUp {
+  0%{
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slideDown{
+  animation: slideDown 1 2s ease;
+}
+@keyframes slideDown {
+  0%{
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width:950px) {
+  .zoomInMobile{
+    animation: zoomMobile 1 1.5s ease;
+  }
+
+  @keyframes zoomMobile {
+    0%{
+      transform: scale(.7);
+      opacity: .5;
+    }
+    100%{
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.showOpacity{
+  animation: opacity1 1 1.5s ease;
+}
+
+@keyframes opacity1{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.opacity0{
+  opacity: 0;
+}
+
+
+
+
+#product-out-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 2em;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+#product-out-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#productLeft img {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.8s ease 0.2s;
+}
+
+#productRight {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s ease 0.4s;
+}
+
+#product-out-container.visible #productLeft img,
+#product-out-container.visible #productRight {
+  opacity: 1;
+  transform: none;
+}
+
+
