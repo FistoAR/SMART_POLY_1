@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
         var items = {
             'Transparent-Plastics-Bags': {
                 title:"Transparent Plastics Bags",
-                image: "./images/product-images/BIOHAZARD.webp",
+                image: "./Smart_poly_images/products_image/Transparent_Plastics_bags.jpg",
                 paragraphs: [
                     `High-quality transparent bags made from PP, LD, HM, and BOPP materials.
                      They are strong, moisture-proof, and hygienic for all types of packaging.
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(){
             },
             'stretch-film': {
                 title: "Stretch Film",
-                image: "./Smart_poly_images/products_image/Stretch_film.webp",
+                image: "./Smart_poly_images/products_image/Stretch_film.jpg",
                 paragraphs: [
                     `High-quality stretch films ensure strong wrapping and load stability with excellent stretch, cling, and durability. Ideal for pallet wrapping, bundling, and protective packaging.`
                 ],
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function(){
             },
             'PP-Box-Strapping-Roll': {
                 title: "PP Box Strapping-Roll",
-                image: "./Smart_poly_images/products_image/PP_Box_Strapping_Roll.webp",
+                image: "./Smart_poly_images/products_image/pp_Box_Strapping_roll.jpg",
                 paragraphs: [
                     `Durable PP strapping rolls designed for firm, break-resistant packaging.
                      Ideal for manual, semi, and automatic strapping machines.
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function(){
             },
             'BOPP-Tapes': {
                 title: "BOPP Tapes",
-                image: "./Smart_poly_images/products_image/BOPP_Tapes.webp",
+                image: "./Smart_poly_images/products_image/bopp_tapes.jpg",
                 paragraphs: [
                     `High-performance BOPP tapes for carton sealing and packaging — offering strong adhesion, clear finish, and smooth unwinding. Ideal for industrial and e-commerce use with size and print customization.`
                 ],
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function(){
             },
             'Fraglie-Handle-with-Care-printer-tapes': {
                 title: "Fraglie Handle with Care printer tapes",
-                image: "./Smart_poly_images/products_image/Fraglie_Handle_with_Care_printer_tapes.webp",
+                image: "./Smart_poly_images/products_image/Fraglie_Handle_with_Care_printer_tapes.jpg",
                 paragraphs: [
                     `Durable printed BOPP tapes with strong adhesion and clear red-white “Fragile Handle With Care” print — ideal for secure e-commerce and industrial packaging.`
                 ],
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function(){
             },
             'POD-Courier-covers': {
                 title: "POD Courier covers",
-                image: "./Smart_poly_images/products_image/POD_Courier_covers.webp",
+                image: "./Smart_poly_images/products_image/POD_Courier_covers.jpg",
                 paragraphs: [
                     `Our POD Courier Covers provide a reliable, tamper-evident packaging solution for e-commerce, logistics and shipping. Built from strong LDPE film, they are designed for easy sealing and safe transport of documents and parcels. Ideal for use by courier firms, online sellers and freight handlers.`
                 ],
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function(){
             },
             'Sutli-Twine': {
                 title: "Sutli Twine",
-                image: "./Smart_poly_images/products_image/Sutli_Twine.webp",
+                image: "./Smart_poly_images/products_image/Sutli_Twine.jpg",
                 paragraphs: [
                     `Durable twisted twine made from virgin plastic, available in multicolor finishes — 
                         ideal for bundling, tying, packaging and general-purpose industrial use. The Zen 
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function(){
             // Add similar table configurations for other products
             'Bubble-wrap-roll': {
                 title: "Bubble wrap roll",
-                image: "./Smart_poly_images/products_image/Bubble_wrap_roll.webp",
+                image: "./Smart_poly_images/products_image/Bubble_wrap_roll.jpg",
                 paragraphs: [
                     `High-quality LDPE & HDPE covers offer superior clarity, strength, and flexibility. Protects products from dust, moisture, and dirt—ideal for industrial, warehouse, and packaging use.`
                 ],
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
             'Zip-lock-pouch': {
                 title: "Zip lock pouch",
-                image: "./Smart_poly_images/products_image/Zip_lock_pouch.webp",
+                image: "./Smart_poly_images/products_image/Zip_lock_pouch.jpg",
                 paragraphs: [
                     `Durable, resealable pouches made from LDPE or BOPP materials. Designed to keep products fresh, moisture-free, and secure, these pouches are ideal for food, pharma, and retail packaging. Available in various sizes, thicknesses, and custom prints for branding needs.`
                 ],
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
             'PVC-cling-flim-wrap': {
                 title: "PVC cling flim wrap",
-                image: "./Smart_poly_images/products_image/PVC_cling_flim_wrap.webp",
+                image: "./Smart_poly_images/products_image/PVC_cling_flim_wrap.jpg",
                 paragraphs: [
                     `Crystal-clear, food-safe PVC film that clings tightly to trays, fruits, and bakery items to lock in freshness and prevent odors. Ideal for home, bakery, and Commercial Use`
                 ],
@@ -397,4 +397,11 @@ function getStoredValuesFromCookie() {
 window.addEventListener("load", () => {
   document.getElementById("product-out-container").classList.add("visible");
 });
+
+
+
+
+// active page intigater 
+
+
 
