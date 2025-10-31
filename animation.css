@@ -719,3 +719,466 @@
         transform: translateY(20px);
     }
 }
+
+
+
+/* ============================================
+   FOOTER ANIMATIONS - COMPLETE
+   ============================================ */
+
+/* Footer Main Container */
+.footer {
+    opacity: 1;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: footerSlideUp 0.8s ease-out forwards;
+}
+
+@keyframes footerSlideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Details Container */
+.footerDetails {
+    opacity: 1;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+.footer.visible .footerDetails {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Logo Section Animation */
+.logoImg {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s;
+}
+
+.footer.visible .logoImg {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.logoImg img {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease-out 0.5s, transform 0.8s ease-out 0.5s;
+}
+
+.footer.visible .logoImg img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.logoImg p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out 0.7s, transform 0.6s ease-out 0.7s;
+}
+
+.footer.visible .logoImg p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Quick Links Section */
+.footer-links {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
+}
+
+.footer.visible .footer-links {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-links h3 {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.6s ease-out 0.5s, transform 0.6s ease-out 0.5s;
+}
+
+.footer.visible .footer-links h3 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer Links - Staggered Animation */
+.footer-links a {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    display: inline-block;
+}
+
+.footer.visible .footer-nav-links a:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.7s;
+}
+
+.footer.visible .footer-nav-links a:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.8s;
+}
+
+.footer.visible .footer-nav-links a:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.9s;
+}
+
+.footer.visible .footer-nav-links a:nth-child(5) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1s;
+}
+
+/* Product Links - Two Column Stagger */
+.footer-products {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out 0.5s, transform 0.8s ease-out 0.5s;
+}
+
+.footer.visible .footer-products {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* First Column Product Links */
+.footer-products > div:first-child a {
+    opacity: 0;
+    transform: translateX(15px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.footer.visible .footer-products > div:first-child a:nth-child(1) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.8s;
+}
+
+.footer.visible .footer-products > div:first-child a:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.9s;
+}
+
+.footer.visible .footer-products > div:first-child a:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1s;
+}
+
+.footer.visible .footer-products > div:first-child a:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.1s;
+}
+
+.footer.visible .footer-products > div:first-child a:nth-child(5) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.2s;
+}
+
+/* Second Column Product Links */
+.footer-products > div:last-child a {
+    opacity: 0;
+    transform: translateX(15px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.footer.visible .footer-products > div:last-child a:nth-child(1) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.3s;
+}
+
+.footer.visible .footer-products > div:last-child a:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.4s;
+}
+
+.footer.visible .footer-products > div:last-child a:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.5s;
+}
+
+.footer.visible .footer-products > div:last-child a:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.6s;
+}
+
+.footer.visible .footer-products > div:last-child a:nth-child(5) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.7s;
+}
+
+/* Arrow Icons in Footer Links */
+/* .arrow-icon {
+    opacity: 1;
+    transform: translateX(15px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+} */
+
+/* .footer.visible .arrow-icon i {
+    opacity: 1;
+    transform: translateX(-10px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+} */
+
+.footer.visible .arrow-icon:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.7s;
+}
+
+.footer.visible .arrow-icon:nth-child(2) i {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.8s;
+}
+
+.footer.visible .arrow-icon:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.8s;
+}
+
+.footer.visible .arrow-icon:nth-child(3) i {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.9s;
+}
+
+.footer.visible .arrow-icon:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.9s;
+}
+
+.footer.visible .arrow-icon:nth-child(4) i {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1s;
+}
+
+.footer.visible .arrow-icon:nth-child(5) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1s;
+}
+
+.footer.visible .arrow-icon:nth-child(5) i {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.1s;
+}
+
+/* Copy Rights Section */
+.copyRights {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out 1.8s, transform 0.8s ease-out 1.8s;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1.5%;
+    margin-top: 2%;
+}
+
+.footer.visible .copyRights {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.copyRights p {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease-out 2s, transform 0.6s ease-out 2s;
+}
+
+.footer.visible .copyRights p {
+    opacity: 1;
+    transform: scale(1);
+    animation: fadeInPulse 0.6s ease-out 2s forwards;
+}
+
+/* Fist-o Logo Animation */
+.fist-o-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out 2.2s, transform 0.6s ease-out 2.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer.visible .fist-o-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fist-o-logo {
+    opacity: 0;
+    transform: scale(0.7) rotate(-45deg);
+    transition: opacity 0.6s ease-out 2.4s, transform 0.6s ease-out 2.4s;
+}
+
+.footer.visible .fist-o-logo {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* Pulse Animation for Footer Elements */
+@keyframes fadeInPulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hover Effects */
+.footer-links a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    transform: translateX(5px);
+}
+
+.arrow-icon i {
+    transition: all 0.3s ease;
+}
+
+.arrow-icon:hover i {
+    transform: translateX(3px);
+    color: var(--green);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .footer {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+
+    .footer.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .footerDetails {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-links {
+        transform: translateY(20px);
+    }
+
+    .footer.visible .footer-links {
+        transform: translateY(0);
+    }
+
+    .copyRights {
+        transform: translateY(20px);
+    }
+
+    .footer.visible .copyRights {
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer-products {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-products > div {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    .footer.visible .footer-products > div {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.8s;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------********************************************************* */
+
+
+
+
+
+

@@ -246,17 +246,17 @@ document.addEventListener("DOMContentLoaded", function(){
         }
 
         // Handle sizes dropdown
-        if (details.sizes) {
-            details.sizes.forEach(function(size) {
-                var createOption = document.createElement("option");
-                createOption.textContent = size;
-                dropdownValues.appendChild(createOption);
-            });
-        }
-        if (!details.sizes && !details.colour) {
-            dropdownName.style.display = 'none';
-            dropdownValues.style.display = 'none';
-        }
+        // if (details.sizes) {
+        //     details.sizes.forEach(function(size) {
+        //         var createOption = document.createElement("option");
+        //         createOption.textContent = size;
+        //         dropdownValues.appendChild(createOption);
+        //     });
+        // }
+        // if (!details.sizes && !details.colour) {
+        //     dropdownName.style.display = 'none';
+        //     dropdownValues.style.display = 'none';
+        // }
     }
 
     // Function to create product specification table
@@ -404,12 +404,12 @@ function getStoredValuesFromCookie() {
             document.getElementById('cartCount').innerHTML = cartCount;
         }
 
-        if (parseInt(cartNumberValue.innerHTML) <= 0) {
-            cartNumberValue.style.display = 'none';
-        }
-        else {
-            cartNumberValue.style.display = 'flex';
-        }
+        // if (parseInt(cartNumberValue.innerHTML) <= 0) {
+        //     cartNumberValue.style.display = 'none';
+        // }
+        // else {
+        //     cartNumberValue.style.display = 'flex';
+        // }
         
     });
     
@@ -424,3 +424,181 @@ window.addEventListener("load", () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ============================================
+// FOOTER ANIMATION - PRODUCTS PAGE
+// ============================================
+
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("✓ DOM Loaded - Initializing footer animations for products page");
+
+    // ============================================
+    // FOOTER INTERSECTION OBSERVER
+    // ============================================
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log("🎬 FOOTER ANIMATION TRIGGERED");
+                entry.target.classList.add('visible');
+                
+                // Log footer animation timeline
+                logFooterAnimationTimeline();
+                
+                // Stop observing after first trigger
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe footer section
+    const footerSection = document.querySelector('.footer');
+    if (footerSection) {
+        console.log("✓ Footer element found - Observing...");
+        observer.observe(footerSection);
+    } else {
+        console.log("✗ Footer element NOT found");
+    }
+
+    // ============================================
+    // LOG FOOTER ANIMATION TIMELINE
+    // ============================================
+    function logFooterAnimationTimeline() {
+        console.log("\n📊 FOOTER ANIMATION TIMELINE:\n");
+
+        const animationSequence = [
+            { time: 0, element: 'Footer Container', icon: '📦' },
+            { time: 200, element: 'Footer Details', icon: '📋' },
+            { time: 300, element: 'Logo Section', icon: '🏷️' },
+            { time: 500, element: 'Logo Image', icon: '🖼️' },
+            { time: 700, element: 'Logo Description', icon: '📝' },
+            { time: 400, element: 'Quick Links Section', icon: '🔗' },
+            { time: 500, element: 'Quick Links Title', icon: '📌' },
+            { time: 700, element: '  ├─ Home Link', icon: '🏠' },
+            { time: 800, element: '  ├─ About Link', icon: 'ℹ️' },
+            { time: 900, element: '  ├─ Products Link', icon: '🛍️' },
+            { time: 1000, element: '  └─ Contact Link', icon: '📞' },
+            { time: 500, element: 'Products Section', icon: '📦' },
+            { time: 800, element: '  ├─ Product 1', icon: '▪️' },
+            { time: 900, element: '  ├─ Product 2', icon: '▪️' },
+            { time: 1000, element: '  ├─ Product 3', icon: '▪️' },
+            { time: 1100, element: '  ├─ Product 4', icon: '▪️' },
+            { time: 1200, element: '  ├─ Product 5', icon: '▪️' },
+            { time: 1300, element: '  ├─ Product 6', icon: '▪️' },
+            { time: 1400, element: '  ├─ Product 7', icon: '▪️' },
+            { time: 1500, element: '  ├─ Product 8', icon: '▪️' },
+            { time: 1600, element: '  ├─ Product 9', icon: '▪️' },
+            { time: 1700, element: '  └─ Product 10', icon: '▪️' },
+            { time: 1800, element: 'Copyright Section', icon: '©️' },
+            { time: 2000, element: 'Copyright Text (Pulse)', icon: '✨' },
+            { time: 2200, element: 'Fist-o Logo', icon: '🎯' }
+        ];
+
+        animationSequence.forEach(item => {
+            setTimeout(() => {
+                console.log(`  ${item.icon} ${item.time}ms → ${item.element}`);
+            }, item.time);
+        });
+
+        setTimeout(() => {
+            console.log("\n✓ ALL FOOTER ANIMATIONS COMPLETE");
+            console.log("═══════════════════════════════════════════════════\n");
+        }, 2500);
+    }
+
+    // ============================================
+    // MENU TOGGLE (Same as main page)
+    // ============================================
+    const menuBar = document.querySelector('.Menu_Bar');
+    const menuBarIcon = document.querySelector('.Menu_Bar i');
+    const getNavLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    if (menuBar) {
+        menuBar.addEventListener('click', function() {
+            getNavLinks.classList.toggle('activeNav');
+
+            navItems.forEach(e => {
+                e.addEventListener('click', function() {
+                    if (getNavLinks.classList.contains('activeNav')) {
+                        getNavLinks.classList.remove('activeNav');
+                        menuBarIcon.className = 'fa-solid fa-bars';
+                    }
+                });
+            });
+
+            if (getNavLinks.classList.contains('activeNav')) {
+                menuBarIcon.className = "fa-solid fa-x";
+            } else {
+                menuBarIcon.className = 'fa-solid fa-bars';
+            }
+        });
+    }
+
+    // ============================================
+    // SCROLL ANIMATIONS WITH DATA ATTRIBUTE
+    // ============================================
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+        return (
+            rect.top <= windowHeight &&
+            rect.bottom >= 0 &&
+            rect.left <= windowWidth &&
+            rect.right >= 0
+        );
+    }
+
+    const elements = document.querySelectorAll('[data-animation]');
+
+    elements.forEach(element => {
+        element.classList.add('opacity0');
+    });
+
+    function handleScroll() {
+        elements.forEach(element => {
+            const animationClass = element.getAttribute('data-animation');
+
+            if (isInViewport(element)) {
+                if (!element.classList.contains(animationClass)) {
+                    element.classList.add(animationClass);
+                    if (element.classList.contains('opacity0')) {
+                        element.classList.remove('opacity0');
+                    }
+                }
+            } else {
+                if (element.classList.contains(animationClass)) {
+                    element.classList.remove(animationClass);
+                    element.classList.add('opacity0');
+                }
+            }
+        });
+    }
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+
+    console.log("✓ Scroll animations initialized");
+    console.log("✓ Products page ready");
+});
