@@ -11,6 +11,25 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // ... existing menu toggle code ...
 
+        menuBar.addEventListener('click', function(){
+        getNavLinks.classList.toggle('activeNav');
+
+        navItems.forEach(e => {
+            e.addEventListener('click', function(){
+                if (getNavLinks.classList.contains('activeNav')) {
+                    getNavLinks.classList.remove('activeNav');
+                    menuBarIcon.className = 'fa-solid fa-bars';
+                }
+            });
+        });
+        if (getNavLinks.classList.contains('activeNav')){
+            menuBarIcon.className = "fa-solid fa-x";
+        }
+        else{
+            menuBarIcon.className = 'fa-solid fa-bars';
+        }
+    });
+
     window.onload = function() {
         var params = new URLSearchParams(window.location.search);
         var item = params.get('product');

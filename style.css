@@ -98,7 +98,6 @@ section:not(.home, .about, .footer){
 }
 
 
-
 /* *********************************************** Common Styles Ended ***************************************************** */
 
 
@@ -148,6 +147,7 @@ section:not(.home, .about, .footer){
 
 .logo-image{
     margin-left: 2%;
+    z-index: 222222222222;
 }
 
 .logo-image img{
@@ -1076,10 +1076,16 @@ section:not(.home, .about, .footer){
     display: flex;
     justify-content: space-around;
     align-items: start;
+    width: 90%;
+    margin: 0 auto;
 }
 
-.logoImg,  .footer-links {
+.logoImg {
     flex: 1;
+   
+}
+.footer-links{
+    flex: 1.2;
 }
 
 .logoImg{
@@ -1163,7 +1169,7 @@ section:not(.home, .about, .footer){
 }
 
 .leftSide, .centerFooter, .footer-links{
-    flex: 1;
+    flex: .5;
 }
 
 
@@ -1337,7 +1343,10 @@ section:not(.home, .about, .footer){
     top: 18%;
     left: 6%;
 }
-
+.footer-products{
+    display: flex;
+    gap: 50px;
+}
 
 /* For mobile view */
 @media screen and (max-width: 750px) {
@@ -1383,6 +1392,11 @@ section:not(.home, .about, .footer){
     
  
     font-size: 8px;
+}
+.footer-products{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 }
@@ -1435,6 +1449,11 @@ section:not(.home, .about, .footer){
 }
 .product-container{
     width: 46%;
+}
+.footer-products{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 }
 
