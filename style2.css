@@ -428,7 +428,7 @@
 }
 
 .footerDetails .footer-links a{
-    color: var(--white);
+    color: var(--black);
     font-weight: bold;
     text-decoration: none;
     transition: all .3s ease;
@@ -440,10 +440,11 @@
 
 .copyRights{
     padding-top:.5%;
-    border-top: 1px solid white;
+    border-top: 1px solid rgb(0, 0, 0);
 }
 .copyRights p{
     text-align: center;
+    color: black;
 }
 
 
@@ -623,7 +624,7 @@
 
 .footer{
     width: 100%;
-    background: #30011b;
+    background: #bbbbbb;
     color: white;
     padding: 1% 0;
 }
@@ -647,6 +648,9 @@
     height: 75px;
     width: 280px;
     object-fit: cover;
+}
+.logoImg p{
+    color: black;
 }
 .logoImg svg{
     display: none;
@@ -769,7 +773,7 @@
 }
 
 .footerDetails .footer-links a{
-    color: var(--white);
+    color: var(--black);
     font-weight: 400;
     text-decoration: none;
     transition: all .3s ease;

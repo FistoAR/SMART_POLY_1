@@ -1067,7 +1067,7 @@ section:not(.home, .about, .footer){
 
 .footer{
     width: 100%;
-    background: #30011b;
+    background: #bbbbbb;
     color: white;
     padding: 1% 0;
 }
@@ -1092,7 +1092,9 @@ section:not(.home, .about, .footer){
     margin-left: 2%;
     padding: 0%;
 }
-
+.logoImg p{
+    color: black;
+}
 .logoImg img{
     height: 75px;
     width: 280px;
@@ -1158,7 +1160,7 @@ section:not(.home, .about, .footer){
 }
 
 .footerDetails .footer-links a{
-    color: var(--white);
+    color: var(--black);
     font-weight: 400;
     text-decoration: none;
     transition: all .3s ease;
@@ -1203,10 +1205,11 @@ section:not(.home, .about, .footer){
 
 .copyRights{
     padding-top:.5%;
-    border-top: 1px solid white;
+    border-top: 1px solid rgb(0, 0, 0);
 }
 .copyRights p{
     text-align: center;
+    color: black;
 }
 
 /* Additional styling */
