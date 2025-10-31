@@ -1116,7 +1116,15 @@ section:not(.home, .about, .footer){
     color: var(--pink);
 }
 
-
+.fist-o-logo{
+    width: 60px;
+    cursor: pointer;
+   
+}
+.fist-o-text{
+    display: flex;
+    gap: 10px;
+}
 ul {
   list-style: none;
   padding-left: 0;
@@ -1169,6 +1177,17 @@ ul li {
     .footer-links > *{
         margin: .5em 0;
     }
+
+    .copyRights{
+ 
+     display: flex;
+     flex-direction: column;
+    justify-content: space-around;
+}
+.fist-o-text{
+    text-align: center;
+    margin: 0 auto;
+}
 }
 
 .footerDetails .footer-links a{
