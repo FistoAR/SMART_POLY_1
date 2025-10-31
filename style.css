@@ -1116,6 +1116,18 @@ section:not(.home, .about, .footer){
     color: var(--pink);
 }
 
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: url('./your-icon.svg') no-repeat left center;
+  background-size: 12px;
+  padding-left: 20px;
+}
+
 @media screen and (max-width: 900px) {
     .footer-links{
         margin-left: unset;
@@ -1199,13 +1211,20 @@ section:not(.home, .about, .footer){
 
 .footer i{
     font-size: 20px;
-    color: var(--pink);
+    color: var(--green);
+}
+
+.arrow-icon{
+    display: flex;
+    gap: 10px;
 }
 
 
 .copyRights{
     padding-top:.5%;
     border-top: 1px solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-around;
 }
 .copyRights p{
     text-align: center;
@@ -1369,6 +1388,7 @@ section:not(.home, .about, .footer){
 }
 .background_img_home_page{
     height: 50vh;
+    object-fit: cover;
 }
 
 .home-img{
@@ -1379,22 +1399,22 @@ section:not(.home, .about, .footer){
 
 .home-img h1 .smart_poly{
 
-     font-size: 30px;
+     font-size: 8vw;
 }
 .home-img h1 .partner_text{
    
-     font-size: 10px;
+     font-size: 3vw;
 }
 
 
 .home-img h1 .excellence{
   
-     font-size: 20px;
+     font-size: 4vw;
 }
 .home-img p{
     
  
-    font-size: 8px;
+    font-size: 1.5vw;
 }
 .footer-products{
     display: flex;
@@ -1421,6 +1441,7 @@ section:not(.home, .about, .footer){
 
     .background_img_home_page{
         height: 60vh;
+        object-fit: cover;
     }
 
     .home-img{
@@ -1429,35 +1450,69 @@ section:not(.home, .about, .footer){
     }
 
     .home-img h1 .smart_poly{
-        font-size: 45px;
+        font-size: 8vw;
     }
 
     .home-img h1 .partner_text{
-        font-size: 16px;
+        font-size: 3vw;
     }
 
     .home-img h1 .excellence{
-        font-size: 30px;
+        font-size: 4vw;
     }
 
     .home-img p{
-        font-size: 12px;
+        font-size: 1.5vw;
     }
     .contactUs {
     padding: 2% 5%;
     min-height: 55vh;
 }
 .footer-links{
-    margin-left: 30px;
+    margin-left: 3px;
+}
+.footer-nav-links{
+    margin-left: 50px;
 }
 .product-container{
     width: 46%;
 }
 .footer-products{
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 120px;
 }
+.contact-mail-address{
+    margin-bottom: 10px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footerDetails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+
+  /* Make sure first two stay in top row */
+  .footerDetails > .logoImg {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .footerDetails > .footer-links:first-of-type {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* The products section spans both columns (2-column internal flex already exists) */
+  .footerDetails > .footer-links:last-of-type {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+}
+
+
 }
 
 /* For mobile view */
@@ -1484,18 +1539,21 @@ section:not(.home, .about, .footer){
     }
 
     .home-img h1 .smart_poly{
-        font-size: 30px;
+        font-size: 8vw;
     }
 
     .home-img h1 .partner_text{
-        font-size: 10px;
+        font-size: 3vw;
     }
 
     .home-img h1 .excellence{
-        font-size: 20px;
+        font-size: 4vw;
     }
 
     .home-img p{
-        font-size: 8px;
+        font-size: 1.5vw;
+    }
+    .contactUs {
+        margin-bottom: 50px;
     }
 }

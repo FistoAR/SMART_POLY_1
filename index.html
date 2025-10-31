@@ -27,8 +27,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             background-color: rgb(255, 255, 255);
             display: flex;
             align-items: center;
@@ -68,7 +68,7 @@
     </style>
 </head>
 
-<body style="overflow-x: hidden;">
+<body style="overflow-x: hidden; overflow-y: hidden;">
     <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-999999999999" style="opacity: 1;">
   <img src="./Smart_poly_images/SP_logo.svg" alt="Logo" class="w-52 h-52 animate-logo ">
 </div>  
@@ -76,17 +76,13 @@
     <main class="main-content">
 
         <a class="backToTop"><i class="fa-solid fa-up-long"></i></a>
-
-        <section class="home" id="home">
-            <div class="background_image_home">
-               
-                <div class="header">
+ <div class="header sticky">
                     <div class="logo-image">
                         <img src="./Smart_poly_images/logo.svg" alt="LOGO">
                         <svg></svg>
                     </div>
 
-                    <div class="nav-links" data-animation="zoomInMobile">
+                    <div class="nav-links" >
                         <div class="homeLink"> <a href="#home">Home</a> </div>
                         <div class="aboutLink"> <a href="#aboutUS">About us</a> </div>
                         <div class="productsLink"> <a href="#our-products">Products</a> </div>
@@ -105,6 +101,10 @@
                     </div>
                     <div class="Menu_Bar"> <i class="fa-solid fa-bars"></i></a> </div>
                 </div>
+        <section class="home" id="home">
+            <div class="background_image_home">
+               
+               
 
                 <!-- <div class="home-img" style="background: url('./Smart_poly_images/background_img_home_page.webp'); height: 100%; width: 100%;"> -->
                     <!-- <img src="./Smart_poly_images/background_img_home_page.webp" alt="" style=""> -->
@@ -363,30 +363,32 @@
                     <img src="./Smart_poly_images/logo.svg" alt="logo">
                     <p style="font-size: .8rem; width: 250px; margin-left: 10px;">Established in 1997, Smart Poly Packaging is a trusted supplier of premium packaging materials, offering reliable solutions nationwide.</p>
                 </div>
-                <div class="footer-links">
+                <div class="footer-links footer-nav-links">
                     <h3>Quick Links</h3>
-                    <a href="#home">Home</a>
-                    <a href="#aboutUS">About us</a>
-                    <a href="#our-products">Products</a> 
-                    <a href="#contactUs">Contact us</a> 
+                   <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i>   <a href="#home">Home</a></div>
+                    <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i>   <a href="#aboutUS">About us</a> </div>   
+                    <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i>   <a href="#our-products">Products</a> </div>
+                    <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i>    <a href="#contactUs">Contact us</a> </div>   
+                       
                 </div>
                  <div class="footer-links" style="flex:1.5;">
                     <h3>Products</h3>
                     <div class="footer-products" >
                     <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="./products.html?product=Transparent-Plastics-Bags" >Transparent Plastics Bags</a>
-                    <a href="./products.html?product=stretch-film" target="_blank">Stretch film</a>
-                    <a href="./products.html?product=PP-Box-Strapping-Roll">PP Box Strapping Roll</a> 
-                    <a href="./products.html?product=BOPP-Tapes">BOPP Tapes</a> 
-                    <a href="./products.html?product=Fraglie-Handle-with-Care-printer-tapes">Fraglie Handle with Care printer tapes</a>
-               
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i> <a href="./products.html?product=Transparent-Plastics-Bags" >Transparent Plastics Bags</a></div> 
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i> <a href="./products.html?product=stretch-film" target="_blank">Stretch film</a></div>
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i> <a href="./products.html?product=PP-Box-Strapping-Roll">PP Box Strapping Roll</a> </div>
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i> <a href="./products.html?product=BOPP-Tapes">BOPP Tapes</a> </div>
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i> <a href="./products.html?product=Fraglie-Handle-with-Care-printer-tapes">Fraglie Handle with Care printer tapes</a></div>
+                   
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="./products.html?product=POD-Courier-covers">POD Courier covers</a>
-                    <a href="./products.html?product=Sutli-Twine">Sutli Twine</a>
-                    <a href="./products.html?product=Bubble-wrap-roll">Bubble wrap roll</a> 
-                    <a href="./products.html?product=Zip-lock-pouch">Zip lock pouch</a> 
-                    <a href="./products.html?product=PVC-cling-flim-wrap">PVC cling flim wrap</a>
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i> <a href="./products.html?product=POD-Courier-covers">POD Courier covers</a></div>
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i> <a href="./products.html?product=Sutli-Twine">Sutli Twine</a></div>
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i> <a href="./products.html?product=Bubble-wrap-roll">Bubble wrap roll</a> </div>
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i> <a href="./products.html?product=Zip-lock-pouch">Zip lock pouch</a></div>
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i> <a href="./products.html?product=PVC-cling-flim-wrap">PVC cling flim wrap</a></div>
+                    
                     </div>
                    
                     </div>
@@ -426,6 +428,7 @@
 </div>
             <div class="copyRights">
                 <p>@Copyrights. All rights are reserverd</p>
+                <p>Developed & Managed By Fistotech Pvt Ltd</p>
             </div>
 
         </section>
@@ -604,10 +607,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Keep preloader visible for a bit longer (e.g., 2.5 seconds)
     setTimeout(() => {
       preloader.classList.add("fade-out");
+      
 
       // Remove preloader from DOM after fade-out completes
       setTimeout(() => {
         preloader.style.display = "none";
+        document.body.style.overflowY = "auto";
       }, 1000); // matches CSS transition time
     }, 3000); // extra wait before fade starts
   });

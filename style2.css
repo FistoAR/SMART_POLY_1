@@ -441,6 +441,8 @@
 .copyRights{
     padding-top:.5%;
     border-top: 1px solid rgb(0, 0, 0);
+     display: flex;
+    justify-content: space-around;
 }
 .copyRights p{
     text-align: center;
@@ -792,7 +794,11 @@
 }
 .footer i{
     font-size: 20px;
-    color: var(--pink);
+    color: var(--green);
+}
+.arrow-icon{
+    display: flex;
+    gap: 10px;
 }
 
 
@@ -847,6 +853,7 @@
 
     .background_img_home_page{
         height: 60vh;
+        object-fit: cover;
     }
 
     .home-img{
@@ -885,4 +892,49 @@
     flex-direction: column;
     gap: 10px;
 }
+.product-out-container{
+    display: flex;
+    flex-direction: column;
+}
+.footer-nav-links{
+    margin-left: 60px;
+}
+.product-container{
+    width: 46%;
+}
+.footer-products{
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+}
+.contact-mail-address{
+    margin-bottom: 10px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footerDetails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+
+  /* Make sure first two stay in top row */
+  .footerDetails > .logoImg {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .footerDetails > .footer-links:first-of-type {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* The products section spans both columns (2-column internal flex already exists) */
+  .footerDetails > .footer-links:last-of-type {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+}
+
 }

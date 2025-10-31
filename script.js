@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const headerNav = document.querySelector('.header');
     document.addEventListener('scroll', function(){
-        if (window.scrollY > 50){
-            headerNav.classList.add('sticky');
-        }
-        else{
-            headerNav.classList.remove('sticky');
-        }
+        // if (window.scrollY > 50){
+        //     headerNav.classList.add('sticky');
+        // }
+        // else{
+        //     headerNav.classList.remove('sticky');
+        // }
     
     });
     
