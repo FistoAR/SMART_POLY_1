@@ -360,6 +360,7 @@ section:not(.home, .about, .footer){
     color: var(--green);
     font-family: 'Geist';
     /* font-size: 40px; */
+    line-height: 1;
 }
 
 .home-img h1 .smart_poly{
@@ -379,6 +380,7 @@ section:not(.home, .about, .footer){
     color: var(--pink);
     font-family: 'Geist';
      font-size: 4vw;
+     
 }
 .home-img p{
     
@@ -1381,8 +1383,9 @@ ul li {
 }
 .home-img{
     position: absolute;
-    top: 18%;
+    top: 16%;
     left: 6%;
+
 }
 .footer-products{
     display: flex;
