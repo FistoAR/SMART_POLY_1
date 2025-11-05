@@ -68,64 +68,43 @@
     </style>
 <style>
 /* Hide default cursor */
-body {
-  cursor: none;
-
+body{
+    cursor: none;
 }
-.glitter-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #000000, #000000, transparent);
-  pointer-events: none;
-  mix-blend-mode: screen;
-  box-shadow: 0 0 15px #000000, 0 0 40px #ffd500;
-  transform: translate(-50%, -50%);
-  z-index: 999999999999;
+#pointer {
+  position: fixed;  /* CHANGE from absolute to fixed */
+  width: 22px;
+  height: 22px;
+  background: #a5d95a;
+  transform: rotate(45deg);
+  z-index: 9999;
+  outline: 2px solid #a5d95a;
+  box-shadow: 0 0 20px #a5d95a;
+  animation: pulse 1s infinite;
+  pointer-events: none;  /* ADD THIS */
+  display: block;  /* ADD THIS */
 }
 
-/* Glitter trail particles */
-.glitter-particle {
-  position: fixed;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0.9;
-  mix-blend-mode: screen;
-  animation: glitterFade 1s ease-out forwards;
-  z-index: 99999999998;
-}
-
-/* Smooth shimmer fade */
-@keyframes glitterFade {
+@keyframes pulse {
   0% {
-    transform: scale(1) translate(0, 0);
-    opacity: 1;
-    filter: blur(0px);
-  }
-  50% {
-    opacity: 0.8;
-    filter: blur(2px);
+    outline-offset: 0;
   }
   100% {
-    transform: scale(1.6) translateY(-15px);
-    opacity: 0;
-    filter: blur(6px);
+    outline-offset: 10px;
+    outline-color: transparent;
   }
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 
 <body style="overflow-x: hidden; overflow-y: hidden;">
+       <div id="pointer"></div>   
     <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-999999999999" style="opacity: 1;">
   <img src="./Smart_poly_images/SP_logo.svg" alt="Logo" class="w-52 h-52 animate-logo ">
 </div>  
 
-<div class="glitter-cursor"></div>
+
     <main class="main-content " >
 <img id="whatsappShareBtn"  src="./Smart_poly_images/Whatsapp.webp" alt="whatsapp" class="whatsapp-btn"/>
         <a class="backToTop"><i class="fa-solid fa-up-long"></i></a>
@@ -732,30 +711,70 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- ================cursor code==================== -->
 
-
 <script>
-const cursor = document.querySelector(".glitter-cursor");
+    const pointer = document.getElementById("pointer");
 
-document.addEventListener("mousemove", e => {
-  cursor.style.top = e.clientY + "px";
-  cursor.style.left = e.clientX + "px";
+    // get custom size
+    const pointerSize = 22;
 
-  // create glitter particle
-  const particle = document.createElement("div");
-  particle.classList.add("glitter-particle");
+    // ✅ ADD THIS: Ensure pointer is always visible
+    pointer.style.pointerEvents = "none";
+    pointer.style.display = "block";
 
-//   const colors = ["#fff6a9", "#ff80ff", "#a6fffa", "#ffd500", "#ff99cc"];
-  const colors = ["#0096FF", "#0096FF", "#0096FF", "#0096FF", "#0096FF"];
-  const color = colors[Math.floor(Math.random() * colors.length)];
-  particle.style.background = color;
-  particle.style.left = e.clientX + "px";
-  particle.style.top = e.clientY + "px";
-  particle.style.boxShadow = `0 0 10px ${color}, 0 0 20px ${color}`;
+    // mouse move
+    window.addEventListener("mousemove", (e) => {
+      const x = e.clientX + "px";
+      const y = e.clientY + "px";
+      const target = e.target;
 
-  document.body.appendChild(particle);
-  setTimeout(() => particle.remove(), 1000);
-});
+      // ✅ Make sure pointer stays visible while moving
+      pointer.style.display = "block";
+
+      gsap.to(pointer, {
+        duration: 0.4,
+        ease: "back.out(1.7)",
+        left: x,
+        top: y
+      });
+
+      if (
+        target.localName === "a" ||
+        target.dataset.cursor === "false" ||
+        target.parentNode?.dataset.cursor === "false"
+      ) {
+        gsap.to(pointer, { duration: 0.5, ease: "power4.out", scale: 0 });
+      } else {
+        gsap.to(pointer, { duration: 0.5, ease: "power4.out", scale: 1 });
+      }
+    });
+
+    // click stretch effect
+    window.addEventListener("mousedown", (e) => {
+      if (
+        e.target.dataset.cursor === "stretch" ||
+        e.target.parentNode?.dataset.cursor === "stretch"
+      ) {
+        gsap.to(pointer, {
+          duration: 0.3,
+          ease: "power4.out",
+          rotation: 0,
+          width: pointerSize + 15,
+          height: pointerSize - 10
+        });
+      }
+    });
+
+    window.addEventListener("mouseup", () => {
+      gsap.to(pointer, {
+        duration: 0.3,
+        ease: "power4.out",
+        rotation: 45,
+        width: pointerSize,
+        height: pointerSize
+      });
+    });
 </script>
+
 <!-- ==================================================== -->
 </body>
 
