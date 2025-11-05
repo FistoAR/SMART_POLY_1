@@ -993,8 +993,8 @@
 
 .back-button {
   position: relative;
-  background: #ff1493; /* Main button color */
-  color: #3eff3e; /* Text color */
+  background: #000000; /* Main button color */
+  color: #ffffff; /* Text color */
   border: none;
   padding: 14px 32px;
   font-size: 16px;
@@ -1002,7 +1002,7 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+  box-shadow: 0 4px 15px rgba(114, 114, 114, 0.3);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1041,15 +1041,16 @@
 
 
 .back-button:hover {
-    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    background: rgb(173, 168, 168);
+
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 20, 147, 0.5);
-    color: #00ff00;
+    box-shadow: 0 6px 20px rgba(138, 135, 137, 0.5);
+    color: #000000;
 }
 
 .back-button:active {
     transform: translateY(-1px);
-    box-shadow: 0 2px 10px rgba(255, 20, 147, 0.3);
+    box-shadow: 0 2px 10px rgba(92, 92, 92, 0.3);
 }
 
 .back-button i {
@@ -1112,15 +1113,3 @@
     }
 }
 
-/* Alternative button style (Optional) */
-.back-button.alt-style {
-    background: #ff1493;
-    border: 2px solid #00ff00;
-    color: #00ff00;
-}
-
-.back-button.alt-style:hover {
-    background: #ff69b4;
-    border-color: #00ff00;
-    color: #00ff00;
-}
