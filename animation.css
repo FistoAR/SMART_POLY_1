@@ -220,7 +220,7 @@
 }
 
 /* Circle Image Animation */
-.circle-img {
+.circle-img-inside {
     opacity: 0;
     animation: rotateIn 1s ease-out 0.7s forwards;
     

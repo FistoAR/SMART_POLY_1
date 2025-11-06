@@ -445,7 +445,7 @@ window.addEventListener("load", () => {
 // ============================================
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("✓ DOM Loaded - Initializing footer animations for products page");
+    // console.log("✓ DOM Loaded - Initializing footer animations for products page");
 
     // ============================================
     // FOOTER INTERSECTION OBSERVER
@@ -458,7 +458,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                console.log("🎬 FOOTER ANIMATION TRIGGERED");
+                // console.log("🎬 FOOTER ANIMATION TRIGGERED");
                 entry.target.classList.add('visible');
                 
                 // Log footer animation timeline
@@ -473,17 +473,17 @@ document.addEventListener("DOMContentLoaded", function() {
     // Observe footer section
     const footerSection = document.querySelector('.footer');
     if (footerSection) {
-        console.log("✓ Footer element found - Observing...");
+        // console.log("✓ Footer element found - Observing...");
         observer.observe(footerSection);
     } else {
-        console.log("✗ Footer element NOT found");
+        // console.log("✗ Footer element NOT found");
     }
 
     // ============================================
     // LOG FOOTER ANIMATION TIMELINE
     // ============================================
     function logFooterAnimationTimeline() {
-        console.log("\n📊 FOOTER ANIMATION TIMELINE:\n");
+        // console.log("\n📊 FOOTER ANIMATION TIMELINE:\n");
 
         const animationSequence = [
             { time: 0, element: 'Footer Container', icon: '📦' },
@@ -515,13 +515,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         animationSequence.forEach(item => {
             setTimeout(() => {
-                console.log(`  ${item.icon} ${item.time}ms → ${item.element}`);
+                // console.log(`  ${item.icon} ${item.time}ms → ${item.element}`);
             }, item.time);
         });
 
         setTimeout(() => {
-            console.log("\n✓ ALL FOOTER ANIMATIONS COMPLETE");
-            console.log("═══════════════════════════════════════════════════\n");
+            // console.log("\n✓ ALL FOOTER ANIMATIONS COMPLETE");
+            // console.log("═══════════════════════════════════════════════════\n");
         }, 2500);
     }
 
@@ -599,8 +599,8 @@ document.addEventListener("DOMContentLoaded", function() {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
 
-    console.log("✓ Scroll animations initialized");
-    console.log("✓ Products page ready");
+    // console.log("✓ Scroll animations initialized");
+    // console.log("✓ Products page ready");
 });
 
 
@@ -628,12 +628,23 @@ document.addEventListener("DOMContentLoaded", function() {
 window.addEventListener('load', function() {
     // If we're on the home page with skipPreloader flag
     if (sessionStorage.getItem('skipPreloader') === 'true') {
-        console.log("✓ Preloader skipped - Coming from product page");
+        // console.log("✓ Preloader skipped - Coming from product page");
         sessionStorage.removeItem('skipPreloader');
     }
 });
 
 
+// ======================================================
+// 1️⃣ Set skip flag before navigating to index.html
+// ======================================================
+document.querySelectorAll('.nav-links a, .footer-nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const href = link.getAttribute('href');
+    if (href && href.includes('index.html')) {
+      sessionStorage.setItem('skipPreloader', 'true');
+    }
+  });
+});
 
 
 // ============================================
@@ -641,21 +652,21 @@ window.addEventListener('load', function() {
 // FINAL FIXED VERSION
 // ============================================
 
-console.log("✓ Smart Parent Tab Handler Loading...");
+// console.log("✓ Smart Parent Tab Handler Loading...");
 
 // ============================================
 // SMART NAVIGATION FUNCTION
 // Close current tab if parent exists, else navigate in current tab
 // ============================================
 function navigateBackSmart(targetHash = '#our-products') {
-    console.log("🔄 Checking for parent tab...");
-    console.log("window.opener exists:", !!window.opener);
-    console.log("window.opener.closed:", window.opener ? !window.opener.closed : 'N/A');
+    // console.log("🔄 Checking for parent tab...");
+    // console.log("window.opener exists:", !!window.opener);
+    // console.log("window.opener.closed:", window.opener ? !window.opener.closed : 'N/A');
 
     try {
         // Check if current tab was opened by another tab
         if (window.opener && !window.opener.closed) {
-            console.log("✓ Parent tab FOUND - Navigating parent to: " + targetHash);
+            // console.log("✓ Parent tab FOUND - Navigating parent to: " + targetHash);
 
             // Navigate parent tab to specific section using hash
             window.opener.location.hash = targetHash;
@@ -663,21 +674,21 @@ function navigateBackSmart(targetHash = '#our-products') {
             // Focus parent window (bring to front)
             window.opener.focus();
 
-            console.log("✓ Parent tab focused, closing current tab in 300ms...");
+            // console.log("✓ Parent tab focused, closing current tab in 300ms...");
 
             // Close this tab after a short delay
             setTimeout(() => {
-                console.log("🔒 Closing current tab...");
+                // console.log("🔒 Closing current tab...");
                 window.close();
             }, 300);
         } else {
-            console.log("✗ No parent tab - Navigating in current tab to: ./index.html" + targetHash);
+            // console.log("✗ No parent tab - Navigating in current tab to: ./index.html" + targetHash);
 
             // Fallback: if no parent tab exists, navigate in current tab
             window.location.href = './index.html' + targetHash;
         }
     } catch (error) {
-        console.error("⚠️ Error during smart navigation:", error);
+        // console.error("⚠️ Error during smart navigation:", error);
         // Fallback if any issue occurs
         window.location.href = './index.html' + targetHash;
     }
@@ -690,18 +701,18 @@ function createBackButtonSmart() {
     const productRight = document.getElementById('productRight');
     
     if (!productRight) {
-        console.log("⏳ productRight element not found, retrying in 500ms...");
+        // console.log("⏳ productRight element not found, retrying in 500ms...");
         setTimeout(createBackButtonSmart, 500);
         return;
     }
     
-    console.log("✓ productRight found - Creating back button...");
+    // console.log("✓ productRight found - Creating back button...");
     
     // Remove old back button if it already exists
     const oldButton = document.getElementById('backButtonContainer');
     if (oldButton) {
         oldButton.remove();
-        console.log("✓ Old back button removed");
+        // console.log("✓ Old back button removed");
     }
     
     // Create button container
@@ -727,11 +738,11 @@ backButton.addEventListener('click', () => {
     // Add SINGLE click event listener
     backButton.addEventListener('click', function(e) {
         e.preventDefault();
-        console.log("🔙 Back button clicked!");
+        // console.log("🔙 Back button clicked!");
         navigateBackSmart('#our-products');
     });
     
-    console.log("✓ Back button created successfully");
+    // console.log("✓ Back button created successfully");
 }
 
 // ============================================
@@ -742,12 +753,12 @@ function initializeSmartNavLinks() {
     const navLinks = document.querySelectorAll('.nav-links a');
     
     if (navLinks.length === 0) {
-        console.log("⏳ Nav links not found, retrying in 500ms...");
+        // console.log("⏳ Nav links not found, retrying in 500ms...");
         setTimeout(initializeSmartNavLinks, 500);
         return;
     }
     
-    console.log(`✓ Found ${navLinks.length} nav links - Initializing...`);
+    // console.log(`✓ Found ${navLinks.length} nav links - Initializing...`);
     
     navLinks.forEach((link, index) => {
         const href = link.getAttribute('href');
@@ -759,27 +770,27 @@ function initializeSmartNavLinks() {
             const hashMatch = href.match(/#[a-zA-Z0-9-]+/);
             const targetHash = hashMatch ? hashMatch[0] : '#home';
             
-            console.log(`  [${index}] Intercepted: "${text}" → ${targetHash}`);
+            // console.log(`  [${index}] Intercepted: "${text}" → ${targetHash}`);
             
             // Add click event
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                console.log(`🔗 Nav link clicked: "${text}" → ${targetHash}`);
+                // console.log(`🔗 Nav link clicked: "${text}" → ${targetHash}`);
                 navigateBackSmart(targetHash);
             });
         } else {
-            console.log(`  [${index}] Skipped: "${text}" (href: ${href})`);
+            // console.log(`  [${index}] Skipped: "${text}" (href: ${href})`);
         }
     });
     
-    console.log("✓ Smart nav links initialized");
+    // console.log("✓ Smart nav links initialized");
 }
 
 // ============================================
 // INITIALIZE ON WINDOW LOAD
 // ============================================
 window.addEventListener('load', function() {
-    console.log("🚀 Window Load Event Fired");
+    // console.log("🚀 Window Load Event Fired");
     
     // Create back button
     createBackButtonSmart();
@@ -787,18 +798,18 @@ window.addEventListener('load', function() {
     // Initialize smart nav links
     initializeSmartNavLinks();
     
-    console.log("✓✓✓ Smart navigation FULLY INITIALIZED ✓✓✓");
+    // console.log("✓✓✓ Smart navigation FULLY INITIALIZED ✓✓✓");
 });
 
 // ============================================
 // FALLBACK: Initialize on DOMContentLoaded
 // ============================================
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("📄 DOMContentLoaded Event Fired");
+    // console.log("📄 DOMContentLoaded Event Fired");
     
     // Wait a bit for DOM elements to render
     setTimeout(() => {
-        console.log("📄 Running setup with 300ms delay...");
+        // console.log("📄 Running setup with 300ms delay...");
         createBackButtonSmart();
         initializeSmartNavLinks();
     }, 300);

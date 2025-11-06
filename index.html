@@ -586,19 +586,19 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         const download_cpcb = document.getElementById('download_cpcb_pdf');
         const download_himalayan = document.getElementById('download_himalaya_pdf');
 
-        download_cpcb.addEventListener('click', function() {
-            const a = document.createElement('a')
-            a.href = "CIPET-OF-HIMALAYA-GREENS.pdf";
-            a.download = "CIPET-OF-HIMALAYA-GREENS.pdf";
-            a.click();
-        })
+        // download_cpcb.addEventListener('click', function() {
+        //     const a = document.createElement('a')
+        //     a.href = "CIPET-OF-HIMALAYA-GREENS.pdf";
+        //     a.download = "CIPET-OF-HIMALAYA-GREENS.pdf";
+        //     a.click();
+        // })
 
-        download_himalayan.addEventListener('click', function() {
-            const a = document.createElement('a')
-            a.href = "Himalaya-Greens.pdf";
-            a.download = "Himalaya-Greens.pdf";
-            a.click();
-        })
+        // download_himalayan.addEventListener('click', function() {
+        //     const a = document.createElement('a')
+        //     a.href = "Himalaya-Greens.pdf";
+        //     a.download = "Himalaya-Greens.pdf";
+        //     a.click();
+        // })
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./script.js?v=2"></script>
@@ -679,6 +679,7 @@ document.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         preloader.style.display = "none";
         document.body.style.overflowY = "auto";
+
       }, 1000); // matches CSS transition time
     }, 3000); // extra wait before fade starts
   });

@@ -2,121 +2,121 @@
 
 
 
-// ============================================
-// PRELOADER CONTROL - SINGLE JS FILE
-// ============================================
+// // ============================================
+// // PRELOADER CONTROL - SINGLE JS FILE
+// // ============================================
 
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("✓ DOM Loaded");
+// document.addEventListener("DOMContentLoaded", function() {
+//     console.log("✓ DOM Loaded");
 
-    const preloader = document.getElementById("preloader");
-    const mainContent = document.querySelector('.main-content');
-    const homeSection = document.querySelector('.home');
+//     const preloader = document.getElementById("preloader");
+//     const mainContent = document.querySelector('.main-content');
+//     const homeSection = document.querySelector('.home');
 
-    if (!preloader) return;
+//     if (!preloader) return;
 
-    // Check if preloader has already been shown
-    const preloaderShown = localStorage.getItem('preloaderShown');
+//     // Check if preloader has already been shown
+//     const preloaderShown = localStorage.getItem('preloaderShown');
     
-    if (preloaderShown === 'true') {
-        // Skip preloader, show content immediately
-        console.log("✓ Preloader already shown - Skipping");
-        preloader.style.display = "none";
-        document.body.style.overflow = 'auto';
-        if (mainContent) {
-            mainContent.style.opacity = '1';
-            mainContent.style.pointerEvents = 'auto';
-        }
+//     if (preloaderShown === 'true') {
+//         // Skip preloader, show content immediately
+//         console.log("✓ Preloader already shown - Skipping");
+//         preloader.style.display = "none";
+//         document.body.style.overflow = 'auto';
+//         if (mainContent) {
+//             mainContent.style.opacity = '1';
+//             mainContent.style.pointerEvents = 'auto';
+//         }
 
-        triggerHomeAnimations();
-        return;
-    }
+//         triggerHomeAnimations();
+//         return;
+//     }
 
-    // Hide main content initially
-    if (mainContent) {
-        mainContent.style.opacity = '0';
-        mainContent.style.pointerEvents = 'none';
-    }
+//     // Hide main content initially
+//     if (mainContent) {
+//         mainContent.style.opacity = '0';
+//         mainContent.style.pointerEvents = 'none';
+//     }
 
-    // Disable scroll during preloader
-    document.body.style.overflow = 'hidden';
+//     // Disable scroll during preloader
+//     document.body.style.overflow = 'hidden';
 
-    // STEP 1: Preloader display (3 seconds)
-    setTimeout(() => {
-        console.log("✓ 3 seconds complete - Starting fade out");
-        preloader.classList.add("fade-out");
+//     // STEP 1: Preloader display (3 seconds)
+//     setTimeout(() => {
+//         console.log("✓ 3 seconds complete - Starting fade out");
+//         preloader.classList.add("fade-out");
 
-        // STEP 2: Preloader fade (1 second)
-        setTimeout(() => {
-            console.log("✓ Preloader fade complete - Removing from DOM");
+//         // STEP 2: Preloader fade (1 second)
+//         setTimeout(() => {
+//             console.log("✓ Preloader fade complete - Removing from DOM");
             
-            preloader.style.display = "none";
-            document.body.style.overflow = 'auto';
+//             preloader.style.display = "none";
+//             document.body.style.overflow = 'auto';
 
-            // Mark preloader as shown
-            localStorage.setItem('preloaderShown', 'true');
+//             // Mark preloader as shown
+//             localStorage.setItem('preloaderShown', 'true');
 
-            // STEP 3: Show main content
-            if (mainContent) {
-                mainContent.style.opacity = '1';
-                mainContent.style.pointerEvents = 'auto';
-                mainContent.style.transition = 'opacity 0.5s ease-in';
-            }
+//             // STEP 3: Show main content
+//             if (mainContent) {
+//                 mainContent.style.opacity = '1';
+//                 mainContent.style.pointerEvents = 'auto';
+//                 mainContent.style.transition = 'opacity 0.5s ease-in';
+//             }
 
-            // STEP 4: Trigger home animations AFTER preloader completes
-            setTimeout(() => {
-                console.log("✓ Main Content visible - Starting HOME ANIMATIONS");
-                triggerHomeAnimations();
-            }, 500);
+//             // STEP 4: Trigger home animations AFTER preloader completes
+//             setTimeout(() => {
+//                 console.log("✓ Main Content visible - Starting HOME ANIMATIONS");
+//                 triggerHomeAnimations();
+//             }, 500);
 
-        }, 1000); // Preloader fade duration
-    }, 3000); // Preloader display duration
+//         }, 1000); // Preloader fade duration
+//     }, 3000); // Preloader display duration
 
 
-function resetHomeAnimations() {
-    console.log("🔄 RESETTING HOME ANIMATIONS\n");
+// function resetHomeAnimations() {
+//     console.log("🔄 RESETTING HOME ANIMATIONS\n");
     
-    // Remove home-active class from all main elements
-    const elementsToReset = [
-        '.header',
-        '.logo-image', 
-        '.background_img_home_page',
-        '.home-img',
-        '.circle-img'
-    ];
+//     // Remove home-active class from all main elements
+//     const elementsToReset = [
+//         '.header',
+//         '.logo-image', 
+//         '.background_img_home_page',
+//         '.home-img',
+//         '.circle-img'
+//     ];
     
-    elementsToReset.forEach(selector => {
-        const element = document.querySelector(selector);
-        if (element) {
-            element.classList.remove('home-active');
-        }
-    });
+//     elementsToReset.forEach(selector => {
+//         const element = document.querySelector(selector);
+//         if (element) {
+//             element.classList.remove('home-active');
+//         }
+//     });
     
-    // Reset nav links
-    const navLinks = document.querySelectorAll('.nav-links div');
-    navLinks.forEach(link => link.classList.remove('home-active'));
+//     // Reset nav links
+//     const navLinks = document.querySelectorAll('.nav-links div');
+//     navLinks.forEach(link => link.classList.remove('home-active'));
     
-    // Reset social icons
-    const socialIcons = document.querySelectorAll('.socialIcons a');
-    socialIcons.forEach(icon => icon.classList.remove('home-active'));
+//     // Reset social icons
+//     const socialIcons = document.querySelectorAll('.socialIcons a');
+//     socialIcons.forEach(icon => icon.classList.remove('home-active'));
     
-    // Reset text elements opacity
-    const textElements = [
-        '.home-img h1 .smart_poly',
-        '.home-img h1 .partner_text', 
-        '.home-img h1 .excellence',
-        '.home-img p'
-    ];
+//     // Reset text elements opacity
+//     const textElements = [
+//         '.home-img h1 .smart_poly',
+//         '.home-img h1 .partner_text', 
+//         '.home-img h1 .excellence',
+//         '.home-img p'
+//     ];
     
-    textElements.forEach(selector => {
-        const element = document.querySelector(selector);
-        if (element) {
-            element.style.opacity = '0';
-        }
-    });
-}
+//     textElements.forEach(selector => {
+//         const element = document.querySelector(selector);
+//         if (element) {
+//             element.style.opacity = '0';
+//         }
+//     });
+// }
  
- 
+ let preloaderDontTrigger = false;
 
  
     // ============================================
@@ -131,7 +131,7 @@ function triggerHomeAnimations() {
             { selector: '.logo-image', delay: 200 },
             { selector: '.background_img_home_page', delay: 400 },
             { selector: '.home-img', delay: 500 },
-            { selector: '.circle-img', delay: 700 }
+            // { selector: '.circle-img', delay: 700 }
         ];
  
         mainElements.forEach(elem => {
@@ -164,14 +164,16 @@ function triggerHomeAnimations() {
             homeText.classList.add('home-img');
         }, 100);
        
-        const homeCircleImg = document.getElementById("homeCircleImg");
-        homeCircleImg.classList.remove('circle-img');
+     const homeCircleImg = document.getElementById("homeCircleImg");
+        // homeCircleImg.classList.remove('circle-img');
+        homeCircleImg.style.display = "none"; 
         setTimeout(() => {
+            homeCircleImg.style.display = "block"; 
             homeCircleImg.classList.add('circle-img');
         }, 100);
-        console.log("✓ ALL HOME ANIMATIONS TRIGGERED");
+        // console.log("✓ ALL HOME ANIMATIONS TRIGGERED");
     }
-});
+// });
 
 
 // ============================================
@@ -472,7 +474,7 @@ contactInput.forEach(function(e) {
 // ============================================
 
 document.addEventListener("DOMContentLoaded", function(){
-    console.log("DOM Content Loaded - Starting initialization");
+    // console.log("DOM Content Loaded - Starting initialization");
 
     // ============================================
     // 1. PRELOADER CONTROL
@@ -481,33 +483,37 @@ document.addEventListener("DOMContentLoaded", function(){
     const homeSection = document.querySelector('.home');
     const mainContent = document.querySelector('.main-content');
 
-    console.log("Preloader found:", !!preloader);
-    console.log("Home section found:", !!homeSection);
+    // console.log("Preloader found:", !!preloader);
+    // console.log("Home section found:", !!homeSection);
 
     // Disable scroll initially
     document.body.style.overflow = 'hidden';
 
     // Start preloader sequence
     setTimeout(() => {
-        console.log("Starting preloader fade-out");
+        // console.log("Starting preloader fade-out");
         preloader.classList.add("fade-out");
 
         setTimeout(() => {
-            console.log("Removing preloader, enabling scroll, triggering animations");
+            // console.log("Removing preloader, enabling scroll, triggering animations");
             preloader.style.display = "none";
             document.body.style.overflow = 'auto';
             
             // Trigger home animations
-            triggerHomeAnimations();
+            console.log("Trigger home animations");
+            if(!preloaderDontTrigger){
+                triggerHomeAnimations();
+            }
+            
             
         }, 1000); // 1 second fade duration
-    }, 3000); // 3 second preloader display
+    }, 1000); // 3 second preloader display
 
     // ============================================
     // 2. HOME ANIMATIONS FUNCTION
     // ============================================
 function triggerHomeAnimations() {
-        console.log("🎬 HOME PAGE ANIMATIONS STARTED\n");
+        // console.log("🎬 HOME PAGE ANIMATIONS STARTED\n");
  
         // Main elements animation
         const mainElements = [
@@ -515,7 +521,7 @@ function triggerHomeAnimations() {
             { selector: '.logo-image', delay: 200 },
             { selector: '.background_img_home_page', delay: 400 },
             { selector: '.home-img', delay: 500 },
-            { selector: '.circle-img', delay: 700 }
+            // { selector: '.circle-img', delay: 0 }
         ];
  
         mainElements.forEach(elem => {
@@ -549,11 +555,13 @@ function triggerHomeAnimations() {
         }, 100);
        
         const homeCircleImg = document.getElementById("homeCircleImg");
-        homeCircleImg.classList.remove('circle-img');
+        // homeCircleImg.classList.remove('circle-img');
+        homeCircleImg.style.display = "none"; 
         setTimeout(() => {
+            homeCircleImg.style.display = "block"; 
             homeCircleImg.classList.add('circle-img');
         }, 100);
-        console.log("✓ ALL HOME ANIMATIONS TRIGGERED");
+        // console.log("✓ ALL HOME ANIMATIONS TRIGGERED");
     }
 
 
@@ -561,7 +569,7 @@ function triggerHomeAnimations() {
     // 3. PAGE VISIBILITY - REVERSE ANIMATIONS
     // ============================================
     document.addEventListener('visibilitychange', function() {
-        console.log("Visibility changed, hidden:", document.hidden);
+        // console.log("Visibility changed, hidden:", document.hidden);
         
         if (document.hidden) {
             // Page hidden - remove animations
@@ -570,13 +578,13 @@ function triggerHomeAnimations() {
             // Page visible - restore animations
             if (preloader.style.display === 'none') {
                 // Re-add animations if preloader is already gone
-                triggerHomeAnimations();
+                // triggerHomeAnimations();
             }
         }
     });
 
     function reverseHomeAnimations() {
-        console.log("Reversing home animations");
+        // console.log("Reversing home animations");
         
         const homeSection = document.querySelector('.home');
         const backgroundImg = document.querySelector('.background_img_home_page');
@@ -744,7 +752,7 @@ function triggerHomeAnimations() {
         });
     }
 
-    console.log("Initialization complete");
+    // console.log("Initialization complete");
 });
 
 
@@ -787,179 +795,176 @@ function triggerHomeAnimations() {
 // PRELOADER TO HOME PAGE ANIMATION SEQUENCE
 // ============================================
 
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("✓ DOM Loaded - Initializing Preloader");
+// document.addEventListener("DOMContentLoaded", function() {
+//     // console.log("✓ DOM Loaded - Initializing Preloader");
 
-    const preloader = document.getElementById("preloader");
-    const mainContent = document.querySelector('.main-content');
+//     const preloader = document.getElementById("preloader");
+//     const mainContent = document.querySelector('.main-content');
 
-    // Hide main content initially
-    if (mainContent) {
-        mainContent.style.opacity = '0';
-        mainContent.style.pointerEvents = 'none';
-    }
+//     // Hide main content initially
+//     if (mainContent) {
+//         mainContent.style.opacity = '0';
+//         mainContent.style.pointerEvents = 'none';
+//     }
 
-    // Disable scroll during preloader
-    document.body.style.overflow = 'hidden';
+//     // Disable scroll during preloader
+//     document.body.style.overflow = 'hidden';
 
-    // ============================================
-    // STEP 1: PRELOADER DISPLAY (3 seconds)
-    // ============================================
-    setTimeout(() => {
-        console.log("✓ Preloader: 3 seconds complete - Starting fade out");
-        preloader.classList.add("fade-out");
+//     // ============================================
+//     // STEP 1: PRELOADER DISPLAY (3 seconds)
+//     // ============================================
+//     setTimeout(() => {
+//         // console.log("✓ Preloader: 3 seconds complete - Starting fade out");
+//         preloader.classList.add("fade-out");
 
-        // ============================================
-        // STEP 2: PRELOADER FADE (1 second)
-        // ============================================
-        setTimeout(() => {
-            console.log("✓ Preloader: Fade complete - Removing from DOM");
+//         // ============================================
+//         // STEP 2: PRELOADER FADE (1 second)
+//         // ============================================
+//         setTimeout(() => {
+//             // console.log("✓ Preloader: Fade complete - Removing from DOM");
             
-            preloader.style.display = "none";
-            document.body.style.overflow = 'auto';
+//             preloader.style.display = "none";
+//             document.body.style.overflow = 'auto';
 
-            // ============================================
-            // STEP 3: SHOW MAIN CONTENT (0.5 seconds)
-            // ============================================
-            if (mainContent) {
-                mainContent.style.opacity = '1';
-                mainContent.style.transition = 'opacity 0.5s ease-in';
-                mainContent.style.pointerEvents = 'auto';
-            }
+//             // ============================================
+//             // STEP 3: SHOW MAIN CONTENT (0.5 seconds)
+//             // ============================================
+//             if (mainContent) {
+//                 mainContent.style.opacity = '1';
+//                 mainContent.style.transition = 'opacity 0.5s ease-in';
+//                 mainContent.style.pointerEvents = 'auto';
+//             }
 
-            // ============================================
-            // STEP 4: TRIGGER HOME ANIMATIONS
-            // ============================================
-            setTimeout(() => {
-                console.log("✓ Main Content: Visible - Starting HOME ANIMATIONS");
-                console.log("═══════════════════════════════════════════════════");
-                triggerHomeAnimations();
-            }, 500);
+//             // ============================================
+//             // STEP 4: TRIGGER HOME ANIMATIONS
+//             // ============================================
+            // setTimeout(() => {
+            //     console.log("✓ Main Content: Visible - Starting HOME ANIMATIONS");
+            //     console.log("═══════════════════════════════════════════════════");
+            //     triggerHomeAnimations();
+            // }, 500);
 
-        }, 1000); // Preloader fade duration
+//         },1000); // Preloader fade duration
 
-    }, 3000); // Preloader display duration
+//     },3000); // Preloader display duration
 
-    // ============================================
-    // HOME ANIMATIONS FUNCTION
-    // ============================================
-    function triggerHomeAnimations() {
-        console.log("🎬 HOME PAGE ANIMATIONS STARTED\n");
+//     // ============================================
+//     // HOME ANIMATIONS FUNCTION
+//     // ============================================
+//     function triggerHomeAnimations() {
+//         // console.log("🎬 HOME PAGE ANIMATIONS STARTED\n");
 
-        const animations = [
-            {
-                selector: '.header',
-                delay: 0,
-                name: 'Header'
-            },
-            {
-                selector: '.logo-image',
-                delay: 200,
-                name: 'Logo Image'
-            },
-            {
-                selector: '.background_img_home_page',
-                delay: 400,
-                name: 'Background Image'
-            },
-            {
-                selector: '.home-img',
-                delay: 500,
-                name: 'Home Content'
-            },
-            {
-                selector: '.circle-img',
-                delay: 700,
-                name: 'Circle Image'
-            }
-        ];
+//         const animations = [
+//             {
+//                 selector: '.header',
+//                 delay: 0,
+//                 name: 'Header'
+//             },
+//             {
+//                 selector: '.logo-image',
+//                 delay: 200,
+//                 name: 'Logo Image'
+//             },
+//             {
+//                 selector: '.background_img_home_page',
+//                 delay: 400,
+//                 name: 'Background Image'
+//             },
+//             {
+//                 selector: '.home-img',
+//                 delay: 500,
+//                 name: 'Home Content'
+//             },
+//             {
+//                 selector: '.circle-img',
+//                 delay: 700,
+//                 name: 'Circle Image'
+//             }
+//         ];
 
-        // Trigger main elements
-        animations.forEach(anim => {
-            setTimeout(() => {
-                const element = document.querySelector(anim.selector);
-                if (element) {
-                    element.classList.add('home-active');
-                    console.log(`  ➜ ${anim.name} animation triggered`);
-                }
-            }, anim.delay);
-        });
+//         // Trigger main elements
+//         animations.forEach(anim => {
+//             setTimeout(() => {
+//                 const element = document.querySelector(anim.selector);
+//                 if (element) {
+//                     element.classList.add('home-active');
+//                     // console.log(`  ➜ ${anim.name} animation triggered`);
+//                 }
+//             }, anim.delay);
+//         });
 
-        // ============================================
-        // NAV LINKS STAGGERED ANIMATION
-        // ============================================
-        const navLinks = document.querySelectorAll('.nav-links div');
-        console.log(`\n  ➜ Nav Links (${navLinks.length} items):`);
+//         // ============================================
+//         // NAV LINKS STAGGERED ANIMATION
+//         // ============================================
+//         const navLinks = document.querySelectorAll('.nav-links div');
+//         // console.log(`\n  ➜ Nav Links (${navLinks.length} items):`);
         
-        navLinks.forEach((link, index) => {
-            const delay = 600 + (index * 100);
-            setTimeout(() => {
-                link.classList.add('home-active');
-                console.log(`    • Nav link ${index + 1} - ${delay}ms`);
-            }, delay);
-        });
+//         navLinks.forEach((link, index) => {
+//             const delay = 600 + (index * 100);
+//             setTimeout(() => {
+//                 link.classList.add('home-active');
+//                 // console.log(`    • Nav link ${index + 1} - ${delay}ms`);
+//             }, delay);
+//         });
 
-        // ============================================
-        // SOCIAL ICONS STAGGERED ANIMATION
-        // ============================================
-        const socialIcons = document.querySelectorAll('.socialIcons a');
-        console.log(`\n  ➜ Social Icons (${socialIcons.length} items):`);
+//         // ============================================
+//         // SOCIAL ICONS STAGGERED ANIMATION
+//         // ============================================
+//         const socialIcons = document.querySelectorAll('.socialIcons a');
+//         // console.log(`\n  ➜ Social Icons (${socialIcons.length} items):`);
         
-        socialIcons.forEach((icon, index) => {
-            const delay = 1100 + (index * 100);
-            setTimeout(() => {
-                icon.classList.add('home-active');
-                console.log(`    • Social icon ${index + 1} - ${delay}ms`);
-            }, delay);
-        });
+//         socialIcons.forEach((icon, index) => {
+//             const delay = 1100 + (index * 100);
+//             setTimeout(() => {
+//                 icon.classList.add('home-active');
+//                 // console.log(`    • Social icon ${index + 1} - ${delay}ms`);
+//             }, delay);
+//         });
 
-        // ============================================
-        // TEXT ELEMENTS ANIMATION
-        // ============================================
-        console.log(`\n  ➜ Text Elements:`);
+//         // ============================================
+//         // TEXT ELEMENTS ANIMATION
+//         // ============================================
+//         // console.log(`\n  ➜ Text Elements:`);
 
-        const textAnimations = [
-            {
-                selector: '.home-img h1 .smart_poly',
-                delay: 800,
-                name: 'Smart Poly'
-            },
-            {
-                selector: '.home-img h1 .partner_text',
-                delay: 1000,
-                name: 'Your Partner Packaging'
-            },
-            {
-                selector: '.home-img h1 .excellence',
-                delay: 1200,
-                name: 'Excellence'
-            },
-            {
-                selector: '.home-img p',
-                delay: 1500,
-                name: 'Description Text'
-            }
-        ];
+//         const textAnimations = [
+//             {
+//                 selector: '.home-img h1 .smart_poly',
+//                 delay: 800,
+//                 name: 'Smart Poly'
+//             },
+//             {
+//                 selector: '.home-img h1 .partner_text',
+//                 delay: 1000,
+//                 name: 'Your Partner Packaging'
+//             },
+//             {
+//                 selector: '.home-img h1 .excellence',
+//                 delay: 1200,
+//                 name: 'Excellence'
+//             },
+//             {
+//                 selector: '.home-img p',
+//                 delay: 1500,
+//                 name: 'Description Text'
+//             }
+//         ];
 
-        textAnimations.forEach(textAnim => {
-            setTimeout(() => {
-                const element = document.querySelector(textAnim.selector);
-                if (element) {
-                    element.style.opacity = '1';
-                    console.log(`    • ${textAnim.name} - ${textAnim.delay}ms`);
-                }
-            }, textAnim.delay);
-        });
+//         textAnimations.forEach(textAnim => {
+//             setTimeout(() => {
+//                 const element = document.querySelector(textAnim.selector);
+//                 if (element) {
+//                     element.style.opacity = '1';
+//                     // console.log(`    • ${textAnim.name} - ${textAnim.delay}ms`);
+//                 }
+//             }, textAnim.delay);
+//         });
 
-        // ============================================
-        // COMPLETION
-        // ============================================
-        setTimeout(() => {
-            console.log("\n✓ ALL HOME ANIMATIONS COMPLETE");
-            console.log("═══════════════════════════════════════════════════");
-        }, 2500);
-    }
-});
+//         // ============================================
+//         // COMPLETION
+//         // ============================================
+       
+//     }
+// });
 
 
 
@@ -972,6 +977,37 @@ document.addEventListener("DOMContentLoaded", function() {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   });
+
+
+// ==========================
+// PRELOADER SCRIPT
+// ==========================
+window.addEventListener("DOMContentLoaded", () => {
+  const preloader = document.getElementById("preloader");
+  const mainContent = document.querySelector("main") || document.body;
+ 
+  // 🚫 Set a flag so animations won't trigger
+  window.preloaderRan = true;
+
+  // If skipPreloader flag exists → hide instantly
+  if (sessionStorage.getItem("skipPreloader") === "true") {
+    preloader.style.display = "none";
+    mainContent.style.visibility = "visible";
+    sessionStorage.removeItem("skipPreloader");
+    preloaderDontTrigger = true;
+    console.log("✓ Preloader skipped instantly");
+    return;
+  }
+
+  // Normal preloader flow
+  setTimeout(() => {
+    preloader.classList.add("fade-out");
+    setTimeout(() => {
+      preloader.style.display = "none";
+      mainContent.style.visibility = "visible";
+    }, 1000); // fade-out duration
+  }, 2500); // preloader duration
+});
 
 
 
