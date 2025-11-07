@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     headers: ['Property', 'Details','Closure Type','Open' ],
                     rows: [
                         ['Capacity', '0.5 Kg (customizable)', 'Pattern','Plain /Custom Print'],
-                        ['Material', 'PP / LD / HM / BOPP', 'Property', 'Moisture Proof'],
+                        ['Material', 'LLDPE', 'Property', 'Moisture Proof'],
                         ['Usage / Application', 'General Packaging', 'Country of Origin', 'Made in India'],
                         
                     ]
@@ -220,7 +220,46 @@ document.addEventListener("DOMContentLoaded", function(){
                     ]
                 }
             },
+            'Self-Adhesive-PP-LD-Covers': {
+                title: "Self-Adhesive PP/LD Covers",
+                image: "./Smart_poly_images/products_image/Self_Adhesive_PP_LD_Covers.jpg",
+                paragraphs: [
+                    `Clear, durable self-adhesive covers made from PP/LD film. Provide strong sealing, scratch resistance, and clear visibility. Ideal for retail, garments, and e-commerce packaging.`
+                ],
+                application: "Ideal for bundling, tying, packaging and general-purpose industrial use.",
+                amount: 296,
+                tableData: {
+                    headers: ['Property', 'Primary Material', 'Grade', 'Std Length', 'Origin', 'Thickness', 'GST'],
+                    rows: [
+                        ['Value',  'PP/LD Film', 'Standard', '50-500 pcs/pack', 'Made in India', '30-150 Mic', '18% Extra'],
+                        
+                    ]
+                }
+            },
         };
+
+
+// 10. Self-Adhesive PP/LD Covers
+// Product Overview:
+// Clear, durable self-adhesive covers made from PP/LD film. Provide strong sealing, scratch resistance, and clear visibility. Ideal for retail, garments, and e-commerce packaging.
+// Technical Specifications
+// Property
+// Primary Material
+// Grade
+// Std Length
+// Origin
+// Thickness
+// GST
+// Value
+// PP/LD Film
+// Standard
+// 50-500 pcs/pack
+// Made in India
+// 30-150 Mic
+// 18% Extra
+
+
+
 
         var details = items[item];
         if (!details) return;
