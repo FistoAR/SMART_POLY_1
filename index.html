@@ -353,7 +353,7 @@
                    
                     <p class="contact-sub-heading">Reach out to us for any enquiry</p>
 
-                    <form action="msg.php" method="post" id="contactForm"  target="_blank">
+                    <form action="msg.php" method="POST" id="contactForm"  target="_blank">
                         <input type="text" name="fname" id="fname" class="contact-input" placeholder="Enter Name" required>
                         <input 
                               type="tel" 
@@ -553,10 +553,10 @@ function getStoredValuesFromCookie() {
 //     cartNumberValue.style.display = 'flex';
 // }
 
-const form = document.querySelector("form");
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
-});
+// const form = document.querySelector("form");
+// form.addEventListener("submit", function(e) {
+//     e.preventDefault();
+// });
 document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
 
@@ -582,9 +582,15 @@ document.getElementById('contactForm').addEventListener('submit', function(event
                 method: method,
                 body: formData
             })
-            .then(response => response.json())
+            .then(response => response.text())
             .then(data => {
                 // Handle response if needed (not used in this example since we're showing message in new tab)
+             if (data.includes(`Thank you`) ) {
+        // Show success message from PHP
+        alert(data);
+    } else {
+        alert("Something went wrong. Please try again.");
+    }
             })
             .catch(error => {
                 console.error('Error:', error);
