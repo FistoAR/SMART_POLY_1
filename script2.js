@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     ]
                 }
             },
-            'Fraglie-Handle-with-Care-printer-tapes': {
+            'Fraglie-Handle-with-Care-printed-tapes': {
                 title: "Fraglie Handle with Care printed tapes",
                 image: "./Smart_poly_images/products_image/Fraglie_Handle_with_Care_printer_tapes.jpg",
                 paragraphs: [
