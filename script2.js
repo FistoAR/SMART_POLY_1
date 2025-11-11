@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
             },
             'Fraglie-Handle-with-Care-printer-tapes': {
-                title: "Fraglie Handle with Care printer tapes",
+                title: "Fraglie Handle with Care printed tapes",
                 image: "./Smart_poly_images/products_image/Fraglie_Handle_with_Care_printer_tapes.jpg",
                 paragraphs: [
                     `Durable printed BOPP tapes with strong adhesion and clear red-white “Fragile Handle With Care” print — ideal for secure e-commerce and industrial packaging.`
